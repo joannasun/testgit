@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <cpn/>
+    </div>
+    
+
+<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+<script>
+    const cpn1=Vue.extend({
+        template:`<div>
+                <h2>test</h2>
+                </div>`
+    })
+    Vue.component('cpn',cpn1)
+
+    const app =new Vue({
+        el:'#app',
+        data:{
+            message:'test cpn'
+        },
+        components:{
+            cpn:cpn1
+        }
+    })
+</script>
+</body>
+</html>
